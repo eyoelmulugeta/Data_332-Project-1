@@ -61,7 +61,8 @@ I used the Unnest tokens function in order to automatically lower-case the words
     facet_wrap(~sentiment, scales = "free_y") +
     labs(x = "count",
        y = "sentiment")
-       
+![use thi one](https://user-images.githubusercontent.com/112992643/223239769-3d4292fe-d449-4059-84c4-dd24d47e0827.png)
+
    1. To perform an analysis, the above table needed to be transformed into a chart. 
    2. The NRC lexicon lists associations of words with several emotions and two sentiemnts which are negative and postive. Each lexicon has a list of
       terms          
@@ -70,8 +71,6 @@ I used the Unnest tokens function in order to automatically lower-case the words
       negative.
    4. Company's response for cutomers issues had high number of potivive sentiments and antcicipation while the ngative anf joy sentiments were low. The 
       postive sentiments were more than 150,000, ancticpation was more that 120,000, joy and negative were both below 5000. 
-
-![use thi one](https://user-images.githubusercontent.com/112992643/223239769-3d4292fe-d449-4059-84c4-dd24d47e0827.png)
 
 
 ## Word Count by sentiment Using the bing lexicon
@@ -84,13 +83,13 @@ I used the Unnest tokens function in order to automatically lower-case the words
     labs(x = "word count", y = "Sentiment")
     geom_text(aes(label=NA), vjust=-0.3, size=3.5)+
     theme_minimal()
- 
+
+![bing plot eed](https://user-images.githubusercontent.com/112992643/223234038-502f2698-37a8-493e-86b8-3a925b349b64.png)
+
    1. The bing analysis has a more general conclusion than the nrc sentiment 
    2. The Bing Lexicon divides words into positive and negative categories in a binary approach.
    3. It combines all the negative and poisive into one and dispalyed a chart with two bars. 
    4. The postive sentiment which contained the words relief and progress was above 150,000 and the negative which was the untimely was below 5000
-
-![bing plot eed](https://user-images.githubusercontent.com/112992643/223234038-502f2698-37a8-493e-86b8-3a925b349b64.png)
 
 ## Word Cloud
 
