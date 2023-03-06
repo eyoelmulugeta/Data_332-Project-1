@@ -39,6 +39,26 @@ I used the Unnest tokens function in order to automatically lower-case the words
 
 <img width="226" alt="Screen Shot 2023-03-05 at 9 55 20 PM" src="https://user-images.githubusercontent.com/112992643/223016941-8f88dd0c-8ec9-483d-b745-16a9ecaa6c98.png">
 
+    df_4 <-df_3 %>%
+     group_by(sentiment) %>%
+     summarise(n = n()) %>%
+     ungroup() %>%
+     mutate(sentiment = reorder(sentiment, n)) %>%
+     #Use `fill = -n` to make the larger bars darker
+     ggplot(aes(sentiment,n , fill = -n)) +
+     geom_col() +
+     guides(fill = "none") + 
+     labs(x = NULL, y = "Word Count") +
+     #  scale_y_continuous(limits = c(0, 500000)) + 
+     ggtitle("Costumer Sentiment") +
+     coord_flip()
+    plot(df_4)
+    
+The above table needed to be converter to a table to do an anylysis 
+![Rplot](https://user-images.githubusercontent.com/112992643/223017615-6a2a5561-70ba-4250-bb68-bad9c0e0a8e5.png)
+
+
+
 
 
 
