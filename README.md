@@ -54,8 +54,10 @@ I used the Unnest tokens function in order to automatically lower-case the words
      coord_flip()
     plot(df_4)
     
-The above table needed to be converter to a table to do an anylysis.  
-![Rplot](https://user-images.githubusercontent.com/112992643/223017615-6a2a5561-70ba-4250-bb68-bad9c0e0a8e5.png)
+The above table needed to be converted to a table to do an anylysis. 
+![Nrc sentiment](https://user-images.githubusercontent.com/112992643/223218551-9c0dba1f-6d2b-42f5-9174-a702ae179d56.png)
+
+
 
 
 
