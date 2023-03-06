@@ -35,7 +35,7 @@ I insatlled and used an NRC sentiment to create the sentiment analysis.
           inner_join(lexicon) %>% 
            group_by(word) %>% 
            count(sentiment, sort = TRUE) 
-I used the Unnest tokens function in order to automatically lower-case the words and remove punctuation from the Company's response to customer column, so it is eaier to comapre and comine with other colmuns. Then create an NRC sentiment lexicon the claculate the sentiment scores. This was done by grouping the words together and do a count of the sentiments. And I filetered all of this into a new data frame. 
+I used the Unnest tokens function in order to automatically lower-case the words and remove punctuation from the Company's response to customer column, so it is eaier to comapre and comine with other colmuns. Then create an NRC and bing sentiment lexicon the claculate the sentiment scores. This was done by grouping the words together and do a count of the sentiments. And I filetered all of this into a new data frame. 
 
 <img width="226" alt="Screen Shot 2023-03-05 at 9 55 20 PM" src="https://user-images.githubusercontent.com/112992643/223016941-8f88dd0c-8ec9-483d-b745-16a9ecaa6c98.png">
 
@@ -54,8 +54,11 @@ I used the Unnest tokens function in order to automatically lower-case the words
      coord_flip()
     plot(df_4)
     
-The above table needed to be converter to a table to do an anylysis 
+The above table needed to be converter to a table to do an anylysis.  
 ![Rplot](https://user-images.githubusercontent.com/112992643/223017615-6a2a5561-70ba-4250-bb68-bad9c0e0a8e5.png)
+
+
+
 
 
 
