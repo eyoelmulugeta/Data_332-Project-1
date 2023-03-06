@@ -44,30 +44,59 @@ I insatlled and used an NRC sentiment to create the sentiment analysis.
            count(sentiment, sort = TRUE) 
 I used the Unnest tokens function in order to automatically lower-case the words and remove punctuation from the Company's response to customer column, so it is eaier to comapre and comine with other colmuns. Then create an NRC and bing sentiment lexicon the claculate the sentiment scores. This was done by grouping the words together and do a count of the sentiments. And I filetered all of this into a new data frame. 
 
+
 <img width="226" alt="Screen Shot 2023-03-05 at 9 55 20 PM" src="https://user-images.githubusercontent.com/112992643/223016941-8f88dd0c-8ec9-483d-b745-16a9ecaa6c98.png">
 
-    df_4 <-df_3 %>%
-     group_by(sentiment) %>%
-     summarise(n = n()) %>%
-     ungroup() %>%
-     mutate(sentiment = reorder(sentiment, n)) %>%
-     #Use `fill = -n` to make the larger bars darker
-     ggplot(aes(sentiment,n , fill = -n)) +
-     geom_col() +
-     guides(fill = "none") + 
-     labs(x = NULL, y = "Word Count") +
-     #  scale_y_continuous(limits = c(0, 500000)) + 
-     ggtitle("Costumer Sentiment") +
-     coord_flip()
-    plot(df_4)
-    
+
+## Word count by the sentiment using NRC lexicon
+   
+     lexicon = get_sentiments("nrc")
+    df_3 %>%
+    group_by(sentiment) %>%
+    slice_max(n, n = 10) %>% 
+    ungroup() %>%
+    mutate(sentiment= reorder(sentiment, n)) %>%
+    ggplot(aes(n, sentiment, fill = sentiment)) +
+    geom_col(show.legend = FALSE) +
+    facet_wrap(~sentiment, scales = "free_y") +
+    labs(x = "count",
+       y = "sentiment")
+       
    1. To perform an analysis, the above table needed to be transformed into a chart. 
-   2. The NRC lexicon lists associations of words with several emotions and two sentiemnts which are negative and postive. Each lexicon has a list of terms          
+   2. The NRC lexicon lists associations of words with several emotions and two sentiemnts which are negative and postive. Each lexicon has a list of
+      terms          
        and their connections to specific interest groups, including emotions. 
    3. The sentimental analysis comprised of four words and these were grouped into four sentiments. the sentiments were Joy, anticipation positive and   
       negative.
-   4. 
-![Nrc sentiment](https://user-images.githubusercontent.com/112992643/223218551-9c0dba1f-6d2b-42f5-9174-a702ae179d56.png)
+   4. Company's response for cutomers issues had high number of potivive sentiments and antcicipation while the ngative anf joy sentiments were low. The 
+      postive sentiments were more than 150,000, ancticpation was more that 120,000, joy and negative were both below 5000. 
+
+![use thi one](https://user-images.githubusercontent.com/112992643/223239769-3d4292fe-d449-4059-84c4-dd24d47e0827.png)
+
+
+## Word Count by sentiment Using the bing lexicon
+  
+    lexicon = get_sentiments("bing")
+
+    df_3%>%
+    ggplot(aes(x=n, y=sentiment)) +
+    geom_bar(stat="identity", fill="red")+
+    labs(x = "word count", y = "Sentiment")
+    geom_text(aes(label=NA), vjust=-0.3, size=3.5)+
+    theme_minimal()
+ 
+   1. The bing analysis has a more general conclusion than the nrc sentiment 
+   2. The Bing Lexicon divides words into positive and negative categories in a binary approach.
+   3. It combines all the negative and poisive into one and dispalyed a chart with two bars. 
+   4. The postive sentiment which contained the words relief and progress was above 150,000 and the negative which was the untimely was below 5000
+![bing plot eed](https://user-images.githubusercontent.com/112992643/223234038-502f2698-37a8-493e-86b8-3a925b349b64.png)
+
+
+
+
+
+
+
 
 
 
