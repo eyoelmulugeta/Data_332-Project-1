@@ -89,7 +89,27 @@ I used the Unnest tokens function in order to automatically lower-case the words
    2. The Bing Lexicon divides words into positive and negative categories in a binary approach.
    3. It combines all the negative and poisive into one and dispalyed a chart with two bars. 
    4. The postive sentiment which contained the words relief and progress was above 150,000 and the negative which was the untimely was below 5000
+
 ![bing plot eed](https://user-images.githubusercontent.com/112992643/223234038-502f2698-37a8-493e-86b8-3a925b349b64.png)
+
+## Word Cloud
+
+    df_3 %>%
+    inner_join(get_sentiments("bing")) %>%
+    count(word, sentiment, sort = TRUE) %>%
+    acast(word ~ sentiment, value.var = "n", fill = 0) %>%
+    comparison.cloud(colors = c("purple", "blue"),
+                   max.words = 100)
+                   
+![word clloud](https://user-images.githubusercontent.com/112992643/223245855-8040cdcd-28b9-496d-827c-ed510b49f408.png)
+
+  1. The word cloud is group or cluster of text shown in various sizes.
+  2. In this word cloud, four emotions with binary sentiments are shown. progress and relief are assigned to the postivie sentiments and untimely is
+      associated with the negative sentiment. 
+  3. This visualization will allow us to see the most significant positive and negative terms.   
+      
+
+
 
 
 
