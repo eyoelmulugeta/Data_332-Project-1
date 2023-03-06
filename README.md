@@ -91,7 +91,7 @@ I used the Unnest tokens function in order to automatically lower-case the words
    3. It combines all the negative and poisive into one and dispalyed a chart with two bars. 
    4. The postive sentiment which contained the words relief and progress was above 150,000 and the negative which was the untimely was below 5000
 
-## Word Cloud
+# 3.Word Cloud
 
     df_3 %>%
     inner_join(get_sentiments("bing")) %>%
