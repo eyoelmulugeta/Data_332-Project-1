@@ -1,8 +1,15 @@
 # Data_332-Project-1
 # Done By : Eyoel Mulugeta 
 
-##Overview
+## Introduction
 This information is a collection of complaints made about businesses, about their consumer financial products and services. The dataset comprises of Consumer Complaints on Financial products and shows how to classify consumer complaints text into these categories: Debt collection, Consumer Loan, Mortgage, Credit card, Credit reporting, Student loan, Bank account or service, Payday loan, Money transfers, Other financial service, Prepaid card.
+
+## Data Dictionary 📖
+ 1. Complaint ID: Is the identificaion for the people who made comaplints about the business.
+ 2. Company: The Businesses that faceed complaints. 
+ 3. Product: classified consumer complaints text into categories.
+ 4. Issue: The issues the customers faced 
+ 5. Company response to customer: How the listed companies responded to the customers issues 
 
 ### Customer Complaint Data 
 
@@ -54,7 +61,12 @@ I used the Unnest tokens function in order to automatically lower-case the words
      coord_flip()
     plot(df_4)
     
-The above table needed to be converted to a table to do an anylysis. 
+   1. To perform an analysis, the above table needed to be transformed into a chart. 
+   2. The NRC lexicon lists associations of words with several emotions and two sentiemnts which are negative and postive. Each lexicon has a list of terms          
+       and their connections to specific interest groups, including emotions. 
+   3. The sentimental analysis comprised of four words and these were grouped into four sentiments. the sentiments were Joy, anticipation positive and   
+      negative.
+   4. 
 ![Nrc sentiment](https://user-images.githubusercontent.com/112992643/223218551-9c0dba1f-6d2b-42f5-9174-a702ae179d56.png)
 
 
