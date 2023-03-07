@@ -106,6 +106,35 @@ I used the Unnest tokens function in order to automatically lower-case the words
   2. In this word cloud, four emotions with binary sentiments are shown. progress and relief are assigned to the postivie sentiments and untimely is
       associated with the negative sentiment. 
   3. This visualization will allow us to see the most significant positive and negative terms.   
+
+## Shiny App
+    column_names<-colnames(df_2) #for input selections
+    ui<-fluidPage( 
+  
+    titlePanel(title = " Customer Complaints"),
+  
+    fluidRow(
+    column(2,
+           selectInput('X', 'Choose X',column_names,column_names[4]),
+           selectInput('Y', 'Choose Y',column_names,column_names[2])
+    ),
+    column(4,plotOutput('plot_01')),
+    column(6,DT::dataTableOutput("table_01", width = "100%"))
+    )
+    )
+    
+    server<-function(input,output){
+      
+      output$plot_01 <- renderPlot({
+        ggplot(df_2,aes_string(x=input$X, y=input$Y, colour=Input$Splitby))+
+          geom_smooth()
+    }
+
+    shinyApp(ui=ui, server=server)
+    
+ ## Conclusion 
+ 
+
       
 
 
