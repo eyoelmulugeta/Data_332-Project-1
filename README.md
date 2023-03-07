@@ -1,6 +1,8 @@
 # Data_332-Project-1
 # Done By : Eyoel Mulugeta 
 
+# Customer Complaint Data 
+
 ## Introduction
 This information is a collection of complaints made about businesses, about their consumer financial products and services. The dataset comprises of Consumer Complaints on Financial products and shows how to classify consumer complaints text into these categories: Debt collection, Consumer Loan, Mortgage, Credit card, Credit reporting, Student loan, Bank account or service, Payday loan, Money transfers, Other financial service, Prepaid card.
 
@@ -10,8 +12,6 @@ This information is a collection of complaints made about businesses, about thei
  3. Product: classified consumer complaints text into categories.
  4. Issue: The issues the customers faced 
  5. Company response to customer: How the listed companies responded to the customers issues 
-
-### Customer Complaint Data 
 
 # 1. Cleaning data
    
