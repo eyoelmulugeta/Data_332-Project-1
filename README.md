@@ -6,7 +6,7 @@
 # Customer Complaint Data 
 
 ## Introduction
-This information is a collection of complaints made about businesses, about their consumer financial products and services. The dataset comprises of Consumer Complaints on Financial products and shows how to classify consumer complaints text into these categories: Debt collection, Consumer Loan, Mortgage, Credit card, Credit reporting, Student loan, Bank account or service, Payday loan, Money transfers, Other financial service, Prepaid card.
+This information is a collection of complaints made about businesses, about their consumer financial products and services. The dataset comprises of Customer Complaints on Financial products and shows how to classify consumer complaints text into these categories: Debt collection, Consumer Loan, Mortgage, Credit card, Credit reporting, Student loan, Bank account or service, Payday loan, Money transfers, Other financial service, Prepaid card.
 
 ## Data Dictionary 📖
  1. Complaint ID: Is the identificaion for the people who made comaplints about the business.
@@ -69,10 +69,10 @@ I used the Unnest tokens function in order to automatically lower-case the words
    2. The NRC lexicon lists associations of words with several emotions and two sentiemnts which are negative and postive. Each lexicon has a list of
       terms          
        and their connections to specific interest groups, including emotions. 
-   3. The sentimental analysis comprised of four words and these were grouped into four sentiments. the sentiments were Joy, anticipation positive and   
+   3. The sentimental analysis comprised of four words and these were grouped into four sentiments. The sentiments were Joy, anticipation positive and   
       negative.
-   4. Company's response for cutomers issues had high number of potivive sentiments and antcicipation while the ngative anf joy sentiments were low. The 
-      postive sentiments were more than 150,000, ancticpation was more that 120,000, joy and negative were both below 5000. 
+   4. Company's response for customer's issues had high number of potivive sentiments and antcicipation while the negative ad joy sentiments were low. 
+   5. The postive sentiments were more than 150,000, ancticpation was more that 120,000, joy and negative were both below 5000. 
 
 
 ## Word Count by sentiment Using the bing lexicon
@@ -136,7 +136,9 @@ I used the Unnest tokens function in order to automatically lower-case the words
     
  ## Conclusion 
  
-
+1. The compnies had used several methods to overcome customers issues. Money was one.
+2. The likes of relief, monetary and progress outweighted the negative sentiments of untimely.
+3. Overall the companies response to customers were mostly positive. This shows that most customers had their issues resolved through several means. 
       
 
 
